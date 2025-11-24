@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a .fa-user {
+            font-size: 1.2rem; /* Adjust icon size */
+        }
+
+        .hero {
+            background: url('https://katanamrp.com/wp-content/uploads/2023/11/shutterstock_2281829879-scaled.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero {
+            background: url('https://katanamrp.com/wp-content/uploads/2023/11/shutterstock_2281829879-scaled.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 2rem;
+            background-color: #fff;
+        }
+
+        .card {
+            background-color: #f1f1f1;
+            width: 30%; /* Decreased width */
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 80%; /* Responsive width */
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .footer .footer-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .footer h3 {
+            color: #ffb400;
+            margin-bottom: 20px;
+        }
+
+        .footer p, .footer ul {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: #ffb400;
+        }
+
+        /* Contact Form */
+        .footer .contact-form input, .footer .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .footer .contact-form button {
+            background-color: #ffb400;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .footer .footer-bottom {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+
+        /* Social Icons */
+        .social-icons a {
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover img {
+            transform: scale(1.2);
+        }
+         { box-sizing: border-box; }
+        
+        body { font-family: Arial, sans-serif; margin: 0; }
+
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide all slides by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Image styles */
+        img {
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5); /* transparent background */
+        }
+
+        /* Number text (1/3 etc.) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            position: absolute;
+            top: 0;
+            padding: 8px 12px;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from { opacity: .4 }
+            to { opacity: 1 }
+        }
+
+        /* Next and previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a bit of transparency */
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Responsive adjustments */
+        @media only screen and (max-width: 600px) {
+            .text { font-size: 11px; }
+        }
+.mySlides img {
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: auto; /* Maintains the aspect ratio */
+    max-height: 500px; /* Optional: Set a maximum height to avoid very tall images */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+		<li><a href="index.html">Home</a></li>
+                <li><a href="order.html">products</a></li>
+		<li><a href="cart.html">my orders</a></li>
+                 <li><a href="help.html">Help/Support</a></li>
+ 		<li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+               <li><a href="account.html"><i class="fas fa-user"></i></a></li>
+
+            </ul>
+        </nav>
+    </header>
+  
+    <main>
+      <div class="slideshow-container">
+
+    <!-- Slide 1 -->
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img16/Grocery/Jupiter19/Wave1/Coop/750x375.jpg" alt="Image 1">
+        
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="https://www.shutterstock.com/image-vector/laundry-detergent-ad-poster-including-600nw-721549198.jpg" alt="Image 2">
+        
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="https://asset22.ckassets.com/resources/image/staticpage_images/buy-grocery-online-1640607072.png" alt="Image 3">
+        
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<!-- The dots/circles for navigation -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+        <section class="cards">
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://www.rpsgroup.com/imported-media/3636/rps-laboratories-cereals-and-grains.jpg?width=830&height=533&quality=90" alt="Grains and Pulses">
+                <div class="card-content">
+                    <h3>Grains and Pulses</h3>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://www.keralaspicesonline.com/wp-content/uploads/2024/06/91797467-selection-of-essential-oils-with-christmas-spices-and-ingredients-bottles-of-essential-oil-spruce.jpg" alt="Oils and Spices">
+                <div class="card-content">
+                    <h3>Oils and Spices</h3>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://t3.ftcdn.net/jpg/01/91/32/34/360_F_191323402_W2ATUPr8dGHALHrvyX4WVlEDz4qXmmd9.jpg" alt="Household Items">
+                <div class="card-content">
+                    <h3>Household Items</h3>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://img.freepik.com/free-photo/shop-clothing-clothes-shop-hanger-modern-shop-boutique_1150-8886.jpg" alt="Clothing">
+                <div class="card-content">
+                    <h3>Clothing</h3>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://media.istockphoto.com/id/1174598609/photo/set-of-contemporary-house-appliances-isolated-on-white.jpg?s=612x612&w=0&k=20&c=bBMILbCpLkhIxbL7sAAXaFOaFaSXFCt80ccHgl7iiWM=" alt="Electronics">
+                <div class="card-content">
+                    <h3>Electronics</h3>
+                </div>
+            </div>
+            <div class="card" onclick="window.location.href='order.html'">
+                <img src="https://thetimberguy.com/cdn/shop/files/retro_style_wooden_furniture_range_1400x.progressive.jpg?v=1613519280" alt="Furniture">
+                <div class="card-content">
+                    <h3>Furniture</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>We are dedicated to providing the best services to our customers, with a focus on quality and innovation.</p>
+                </div>
+
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section contact-form">
+                    <h3>Contact Us</h3>
+                    <form action="#">
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook">
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter">
+                </a>
+                <a href="https://www.whatsapp.com" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 YourCompany. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+       let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    function plusSlides(n) {
+        slideIndex += n - 1; // Update the index based on button click
+        showSlides();
+    }
+
+    function currentSlide(n) {
+        slideIndex = n - 1;
+        showSlides();
+    }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function(event) {
+            // Placeholder for modal close functionality if needed
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #007bff;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #0056b3;
+        }
+        header nav ul li {
+            margin: 0 15px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        #cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #cart-table th, #cart-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        #cart-table th {
+            background-color: #007bff;
+            color: white;
+        }
+        #cart-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        #order-button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #order-button:hover {
+            background-color: #218838;
+        }
+        #total {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: right;
+        }
+        /* Modal Styles */
+        #order-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        #confirm-order {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+        }
+        #confirm-order:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+		<li><a href="order.html">Order Management</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="help.html">Help/Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <h1>Your Cart</h1>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price (₹)</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div id="total"></div>
+    <button id="order-button">Place Order</button>
+
+    <!-- Order Modal -->
+    <div id="order-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 style="color: #007bff;">Order Details</h2>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" placeholder="Enter your contact number" required>
+            <label for="address">Shipping Address:</label>
+            <input type="text" id="address" placeholder="Enter your shipping address" required>
+            <label for="payment">Payment Method:</label>
+            <select id="payment" required>
+                <option value="" disabled selected>Select payment method</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+            <div id="payment-details" class="hidden">
+                <label for="card-number" id="card-number-label">Card Number:</label>
+                <input type="text" id="card-number" placeholder="Enter card number" required>
+            </div>
+            <div id="paypal-details" class="hidden">
+                <label for="paypal-number">PayPal Number:</label>
+                <input type="text" id="paypal-number" placeholder="Enter your PayPal number" required>
+            </div>
+            <button id="confirm-order">Confirm Order</button>
+        </div>
+    </div>
+
+    <script>
+        function updateCart() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartBody = document.querySelector('#cart-table tbody');
+            const totalDisplay = document.getElementById('total');
+            cartBody.innerHTML = '';
+            let totalAmount = 0;
+
+            if (cartItems.length === 0) {
+                cartBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">Your cart is empty. Add items to the cart.</td></tr>';
+                totalDisplay.textContent = '';
+                return;
+            }
+
+            cartItems.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>₹${item.price}</td>
+                    <td><button style="background-color: #dc3545; color: white; border: none; padding: 5px; border-radius: 5px; cursor: pointer;">Delete</button></td>
+                `;
+                totalAmount += parseInt(item.price);
+
+                const deleteButton = row.querySelector('button');
+                deleteButton.onclick = () => {
+                    cartItems.splice(index, 1);
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    updateCart();
+                };
+
+                cartBody.appendChild(row);
+            });
+
+            totalDisplay.textContent = `Total Amount: ₹${totalAmount}`;
+        }
+
+        document.getElementById('order-button').addEventListener('click', () => {
+            document.getElementById('order-modal').style.display = 'block';
+        });
+
+        document.querySelector('.close').addEventListener('click', () => {
+            document.getElementById('order-modal').style.display = 'none';
+            resetPaymentFields();
+        });
+
+        document.getElementById('payment').addEventListener('change', (event) => {
+            const paymentMethod = event.target.value;
+            resetPaymentFields();
+
+            if (paymentMethod === 'Credit Card' || paymentMethod === 'Debit Card') {
+                document.getElementById('payment-details').classList.remove('hidden');
+                document.getElementById('card-number-label').textContent = paymentMethod === 'Credit Card' ? 'Credit Card Number:' : 'Debit Card Number:';
+            } else if (paymentMethod === 'PayPal') {
+                document.getElementById('paypal-details').classList.remove('hidden');
+            }
+        });
+
+        function resetPaymentFields() {
+            document.getElementById('payment-details').classList.add('hidden');
+            document.getElementById('paypal-details').classList.add('hidden');
+            document.getElementById('card-number').value = '';
+            document.getElementById('paypal-number').value = '';
+        }
+
+        document.getElementById('confirm-order').addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const contact = document.getElementById('contact').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('payment').value;
+            const cardNumber = document.getElementById('card-number').value;
+            const paypalNumber = document.getElementById('paypal-number').value;
+
+            if (name && contact && address && paymentMethod && 
+                (paymentMethod !== 'Credit Card' && paymentMethod !== 'Debit Card' || cardNumber) && 
+                (paymentMethod !== 'PayPal' || paypalNumber)) {
+                alert('Order placed successfully!');
+                localStorage.removeItem('cartItems'); // Clear the cart after ordering
+                updateCart(); // Update the display
+                document.getElementById('order-modal').style.display = 'none';
+            } else {
+                alert('Please fill in all fields correctly.');
+            }
+        });
+
+        // Initialize the cart on page load
+        updateCart();
+    </script>
+</body>
+</html>

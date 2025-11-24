@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #f8f8f8;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ccc;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .category {
+            margin-bottom: 40px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 220px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        .card button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                 <li><a href="index.html">Home</a></li>
+                <li><a href="order.html">Order Management</a></li>
+		<li><a href="cart.html">View Cart</a></li>
+                 <li><a href="help.html">Help/Support</a></li>
+ 		<li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="inventory">
+            <div class="category">
+                <h1>Grains and Pulses</h1>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://png.pngtree.com/png-vector/20240731/ourmid/pngtree-bag-with-wheat-of-a-grain-corn-open-ear-png-image_13341128.png" alt="Wheat">
+                        <h2>Wheat</h2>
+                        <p>Price: ₹10 per kg</p>
+                        <button class="add-to-cart" data-item="Wheat" data-price="10">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL3Jhd3BpeGVsX29mZmljZV80OV9waG90b19vZl9yaWNlX3NhY2tfd2l0aF9yaWNlX2Nyb3BfaXNvbGF0ZWRfb18zNjM2OGQ2YS0yMTNkLTQwZjUtOTUzNy1jMzhhODgxOWM0OTMucG5n.png" alt="Rice">
+                        <h2>Rice</h2>
+                        <p>Price: ₹12 per kg</p>
+                        <button class="add-to-cart" data-item="Rice" data-price="12">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrO5wUZwL8RpcAR1Z1qDyqrS9ZQWWdneX_dw&s" alt="Sugar">
+                        <h2>Sugar</h2>
+                        <p>Price: ₹5 per kg</p>
+                        <button class="add-to-cart" data-item="Sugar" data-price="5">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://img2.exportersindia.com/product_images/bc-full/2021/5/6531374/salt-1621672249-5831936.jpeg" alt="Salt">
+                        <h2>Salt</h2>
+                        <p>Price: ₹1 per kg</p>
+                        <button class="add-to-cart" data-item="Salt" data-price="1">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/wheat-grain-flour-22804776.jpg" alt="Flour">
+                        <h2>Flour</h2>
+                        <p>Price: ₹6 per kg</p>
+                        <button class="add-to-cart" data-item="Flour" data-price="6">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWbOxMJyCEbDiKtCIiy4fUwfr_30fosY4xsw&s" alt="Lentils">
+                        <h2>Lentils</h2>
+                        <p>Price: ₹20 per kg</p>
+                        <button class="add-to-cart" data-item="Lentils" data-price="20">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://horecastore.ae/cdn/shop/files/MasoorDal15Kgs-1.webp?v=1713160163" alt="Masoor Dal">
+                        <h2>Masoor Dal</h2>
+                        <p>Price: ₹25 per kg</p>
+                        <button class="add-to-cart" data-item="Masoor Dal" data-price="25">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://www.heart.org/-/media/Images/News/2018/August-2018/0816Eggs_SC.jpg?h=501&w=800&sc_lang=en" alt="Eggs">
+                        <h2>Eggs</h2>
+                        <p>Price: ₹5 per piece</p>
+                        <button class="add-to-cart" data-item="Eggs" data-price="5">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://media.post.rvohealth.io/wp-content/uploads/2020/03/oats-oatmeal-732x549-thumbnail.jpg" alt="Oats">
+                        <h2>Oats</h2>
+                        <p>Price: ₹50 per kg</p>
+                        <button class="add-to-cart" data-item="Oats" data-price="50">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQosZbkjF9KtcLwTZsLbkGjxAYL4OUXt96lA&s" alt="Pasta">
+                        <h2>Pasta</h2>
+                        <p>Price: ₹40 per packet</p>
+                        <button class="add-to-cart" data-item="Pasta" data-price="40">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://4.imimg.com/data4/KN/NW/MY-4689640/hakka-noodles-500x500.jpg" alt="Noodles">
+                        <h2>Noodles</h2>
+                        <p>Price: ₹30 per packet</p>
+                        <button class="add-to-cart" data-item="Noodles" data-price="30">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://5.imimg.com/data5/SF/JS/IG/SELLER-15105567/peanut-butter.png" alt="Peanut Butter">
+                        <h2>Peanut Butter</h2>
+                        <p>Price: ₹150 per jar</p>
+                        <button class="add-to-cart" data-item="Peanut Butter" data-price="150">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://www.shutterstock.com/image-photo/organic-gur-jaggery-powder-cubes-260nw-2187572591.jpg" alt="Jaggery">
+                        <h2>Jaggery</h2>
+                        <p>Price: ₹40 per kg</p>
+                        <button class="add-to-cart" data-item="Jaggery" data-price="40">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h1>Oils and Spices</h1>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSeqpnoMqUcYKEeci2HqDH7KExdC8wjnHHXw&" alt="Cooking Oil">
+                        <h2>Cooking Oil</h2>
+                        <p>Price: ₹100 per litre</p>
+                        <button class="add-to-cart" data-item="Cooking Oil" data-price="100">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/297114051/WN/SZ/QF/109200036/red-chilli-powder.jpeg" alt="Chilli Powder">
+                        <h2>Chilli Powder</h2>
+                        <p>Price: ₹20 per packet</p>
+                        <button class="add-to-cart" data-item="Chilli Powder" data-price="20">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://dhanipurespices.com/wp-content/uploads/2022/10/Turmeric-Powder-and-Whole.jpeg" alt="Turmeric Powder">
+                        <h2>Turmeric Powder</h2>
+                        <p>Price: ₹30 per packet</p>
+                        <button class="add-to-cart" data-item="Turmeric Powder" data-price="30">Add to Cart</button>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="https://thumbs.dreamstime.com/b/red-dry-chillies-bag-isolated-brown-background-use-food-152123370.jpg" alt="Red Chilli">
+                        <h2>Red Chilli</h2>
+                        <p>Price: ₹15 per packet</p>
+                        <button class="add-to-cart" data-item="Red Chilli" data-price="15">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://5.imimg.com/data5/YG/EC/MY-10099507/dry-tamarind.png" alt="Tamarind">
+                        <h2>Tamarind</h2>
+                        <p>Price: ₹30 per packet</p>
+                        <button class="add-to-cart" data-item="Tamarind" data-price="30">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://cdn.pixabay.com/photo/2024/02/15/03/59/honey-8574616_640.jpg" alt="Honey">
+                        <h2>Honey</h2>
+                        <p>Price: ₹200 per jar</p>
+                        <button class="add-to-cart" data-item="Honey" data-price="200">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h1>Household Items</h1>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://cvskinlabs.com/wp-content/uploads/2010/04/Bar-Soap1.jpg" alt="Soap">
+                        <h2>Soap</h2>
+                        <p>Price: ₹30 per bar</p>
+                        <button class="add-to-cart" data-item="Soap" data-price="30">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://www.icapsulepack.com/wp-content/uploads/2023/01/THE-BENEFITS.jpg" alt="Detergent Powder">
+                        <h2>Detergent Powder</h2>
+                        <p>Price: ₹100 per kg</p>
+                        <button class="add-to-cart" data-item="Detergent Powder" data-price="100">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://media6.ppl-media.com/mediafiles/blogs/7_Best_Chemical_free_Shampoos_in_India_bdcdd856b7.jpg" alt="Shampoo">
+                        <h2>Shampoo</h2>
+                        <p>Price: ₹200 per bottle</p>
+                        <button class="add-to-cart" data-item="Shampoo" data-price="200">Add to Cart</button>
+                    </div>
+                    <div class="card">
+                        <img src="https://img.freepik.com/free-photo/close-up-hygienic-hand-washing_23-2149218143.jpg" alt="Hand Wash">
+                        <h2>Hand Wash</h2>
+                        <p>Price: ₹50 per bottle</p>
+                        <button class="add-to-cart" data-item="Hand Wash" data-price="50">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const itemName = button.getAttribute('data-item');
+                const itemPrice = button.getAttribute('data-price');
+
+                cartItems.push({ name: itemName, price: itemPrice });
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            });
+        });
+    </script>
+</body>
+</html>

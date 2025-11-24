@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        header nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideInHeading 1s forwards;
+        }
+        h2 {
+            color: #555;
+            font-size: 2em;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideInHeading 1.2s forwards;
+        }
+        @keyframes slideInHeading {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px; /* Increased padding */
+            margin: 10px;
+            width: 250px; /* Increased width */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideInCard 1s forwards;
+        }
+        .card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes slideInCard {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card h4 {
+            position: relative;
+            color: #333;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .social-icons {
+            margin-top: 10px;
+        }
+        .social-icons img {
+            width: 24px;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="order.html">Order Management</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="help.html">Help/Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+    <h1>Meet the Team</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="A.Akshitha">
+            <h4>A. Akshitha</h4>
+            <div class="social-icons">
+                <a href="https://instagram.com/johndoe" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://linkedin.com/in/johndoe" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="D.Deepthi Reddy">
+            <h4>D. Deepthi Reddy</h4>
+            <div class="social-icons">
+                <a href="https://instagram.com/janesmith" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://wa.me/1234567891" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://linkedin.com/in/janesmith" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg" alt="A.Anushka Reddy">
+            <h4>A. Anushka Reddy</h4>
+            <div class="social-icons">
+                <a href="https://instagram.com/alexjohnson" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/instagram-new.png" alt="Instagram">
+                </a>
+                <a href="https://wa.me/1234567892" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/whatsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://linkedin.com/in/alexjohnson" target="_blank">
+                    <img src="https://img.icons8.com/color/24/000000/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>

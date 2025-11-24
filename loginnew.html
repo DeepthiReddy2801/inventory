@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('https://t4.ftcdn.net/jpg/06/91/98/67/360_F_691986785_hhOd340GgyRUbfVX0k7nZTWmaFuOx3oG.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        input[type=text], input[type=password], input[type=email] {
+            width: 100%;
+            padding: 12px 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 25%;
+            border-radius: 50%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding-top: 40px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto 15% auto;
+            border: 1px solid #888;
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Engineered to handle all your<br> <span style="color:red">inventory needs</span></h1>
+    <p>Your complete inventory management software to track inventory, streamline sales, fulfill orders, and oversee warehouses from a single window.</p>
+
+    <button onclick="document.getElementById('loginModal').style.display='block'" style="width:auto;">Login</button>
+    <p>Don't have an account? <button onclick="document.getElementById('signupModal').style.display='block'" style="background-color:#007bff;">Sign Up</button></p>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <form class="modal-content animate" action="#" method="post" onsubmit="return handleLogin(event)">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo7WfE6wFfdpeFph92LdEFJFnula0ecIObiQ&s" alt="User Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                <button type="submit">Login</button>
+                <label style="color: black;">
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('loginModal').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw" style="color: black;">Forgot <a href="#">password?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <form class="modal-content animate" action="#" method="post" onsubmit="return handleSignup(event)">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('signupModal').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Create an Account</h2>
+            </div>
+
+            <div class="container">
+                <label><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="new-username" required>
+
+                <label><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" name="new-email" required>
+
+                <label><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="new-psw" required>
+                
+                <button type="submit">Sign Up</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('signupModal').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    // Get the modals
+    var loginModal = document.getElementById('loginModal');
+    var signupModal = document.getElementById('signupModal');
+
+    // Close modal when user clicks outside it
+    window.onclick = function(event) {
+        if (event.target == loginModal) loginModal.style.display = "none";
+        if (event.target == signupModal) signupModal.style.display = "none";
+    }
+
+    // Handle login
+    function handleLogin(event) {
+        event.preventDefault();
+        const username = document.querySelector('input[name="uname"]').value;
+        const password = document.querySelector('input[name="psw"]').value;
+
+        if (username && password) {
+            alert("Login successful!");
+            window.location.href = "index.html"; // Redirect after login
+        } else {
+            alert("Please fill in all fields.");
+        }
+    }
+
+    // Handle signup
+    function handleSignup(event) {
+        event.preventDefault();
+        const newUsername = document.querySelector('input[name="new-username"]').value;
+        const newEmail = document.querySelector('input[name="new-email"]').value;
+        const newPassword = document.querySelector('input[name="new-psw"]').value;
+
+        if (newUsername && newEmail && newPassword) {
+            alert("Sign-up successful! You can now log in.");
+            signupModal.style.display = 'none';
+        } else {
+            alert("Please fill in all fields.");
+        }
+    }
+    </script>
+
+</body>
+</html>
