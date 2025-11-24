@@ -12,4 +12,4 @@ It showcases basic full-stack development by integrating a responsive frontend w
 - HTML
 - CSS
 - JavaScript
--MySQL
+- MySQL
